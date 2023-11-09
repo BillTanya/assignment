@@ -13,8 +13,7 @@ Circle Perimeter 1 Area 2
 
 Bonus points for:
 - tests
-- code that is easy to extend to add more shapes
-for example “Triangle Point1 5 5 Point2 8 8 Point3 10 2”
+- code that is easy to extend to add more shapes for example “Triangle Point1 5 5 Point2 8 8 Point3 10 2”
 
 
 I suggest that the goal is not to write the perfect code but have something we can use for the technical interview and build on it. You can take your time and don't rush. Would be good to get it done in few days, say by Friday.
