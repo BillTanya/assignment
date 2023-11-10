@@ -2,7 +2,10 @@ from math import sqrt, pi
 
 
 class Square:
-    def __init__(self, top_right_x, top_right_y, side):
+    def __init__(self, figure):
+        top_right_x = int(figure[2])
+        top_right_y = int(figure[3])
+        side = int(figure[-1])
         self.top_right_x, self.top_right_y = top_right_x, top_right_y
         if side <= 0:
             raise ValueError("The side of the square must be a positive number!")

@@ -5,28 +5,28 @@ from assignment import handle_figure
 
 class SquareTest(unittest.TestCase):
     valid_data = [
-        [[2, 2, 2], 8, 4],
-        [[3, 2, 3], 12, 9],
-        [[2, 2, 4], 16, 16]]
+        [["Square", "TopRight", "2", "2", "Side", "2"], 8, 4],
+        [["Square", "TopRight", "3", "2", "Side", "3"], 12, 9],
+        [["Square", "TopRight", "2", "2", "Side", "4"], 16, 16]]
     not_valid_data = [
-        [2, 2, 0],
-        [3, 2, -2],
-        [2, 2]]
+        ["Square", "TopRight", "2", "2", "Side", "0"],
+        ["Square", "TopRight", "2", "2", "Side", "-2"],
+        ["Square", "TopRight", "2", "2", "Side"]]
 
     def test_perimeter(self):
         for data in self.valid_data:
-            s = Square(*data[0])
+            s = Square(data[0])
             self.assertEqual(s.perimeter(), data[1])
 
     def test_area(self):
         for data in self.valid_data:
-            s = Square(*data[0])
+            s = Square(data[0])
             self.assertEqual(s.area(), data[2])
 
     def test_not_valid_data(self):
         with self.assertRaises(ValueError) as ec:
             for data in self.not_valid_data:
-                s = Square(*data)
+                s = Square(data)
 
 
 class RectangleTest(unittest.TestCase):

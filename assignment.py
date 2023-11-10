@@ -6,10 +6,7 @@ from figures import *
 def handle_figure(figure):
     try:
         if figure[0] == 'Square':
-            top_right_x = int(figure[2])
-            top_right_y = int(figure[3])
-            side = int(figure[-1])
-            square = Square(top_right_x, top_right_y, side)
+            square = Square(figure)
             return f'Square Perimeter {square.perimeter()} Area {square.area()}'
         elif figure[0] == 'Rectangle':
             top_right_x = int(figure[2])
