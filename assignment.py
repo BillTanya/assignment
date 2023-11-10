@@ -6,19 +6,17 @@ from figures import *
 def handle_figure(figure):
     try:
         if figure[0] == 'Square':
-            square = Square(figure)
-            return f'Square Perimeter {square.perimeter()} Area {square.area()}'
+            fig = Square(figure)
         elif figure[0] == 'Rectangle':
-            rectangle = Rectangle(figure)
-            return f'Rectangle Perimeter {rectangle.perimeter()} Area {rectangle.area()}'
+            fig = Rectangle(figure)
         elif figure[0] == 'Circle':
-            circle = Circle(figure)
-            return f'Circle Perimeter {circle.perimeter()} Area {circle.area()}'
+            fig = Circle(figure)
         elif figure[0] == 'Triangle':
-            triangle = Triangle(figure)
-            return f'Triangle Perimeter {triangle.perimeter()} Area {triangle.area()}'
+            fig = Triangle(figure)
+        return f'{fig.__class__.__name__} Perimeter {fig.perimeter()} Area {fig.area()}'
     except ValueError as ec:
         return ec
+
 
 
 
