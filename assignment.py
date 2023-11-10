@@ -1,25 +1,20 @@
 import sys
 from figures import *
 
+figure_dict = {
+    'Square': Square,
+    'Rectangle': Rectangle,
+    "Circle": Circle,
+    "Triangle": Triangle
+}
 
 
 def handle_figure(figure):
     try:
-        if figure[0] == 'Square':
-            fig = Square(figure)
-        elif figure[0] == 'Rectangle':
-            fig = Rectangle(figure)
-        elif figure[0] == 'Circle':
-            fig = Circle(figure)
-        elif figure[0] == 'Triangle':
-            fig = Triangle(figure)
+        fig = figure_dict[figure[0]](figure)
         return f'{fig.__class__.__name__} Perimeter {fig.perimeter()} Area {fig.area()}'
     except ValueError as ec:
         return ec
-
-
-
-
 
 
 if __name__ == "__main__":
