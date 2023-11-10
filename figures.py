@@ -2,7 +2,10 @@ from math import sqrt, pi
 
 
 class Square:
-    def __init__(self, top_right_x, top_right_y, side):
+    def __init__(self, figure):
+        top_right_x = int(figure[2])
+        top_right_y = int(figure[3])
+        side = int(figure[-1])
         self.top_right_x, self.top_right_y = top_right_x, top_right_y
         if side <= 0:
             raise ValueError("The side of the square must be a positive number!")
@@ -18,7 +21,11 @@ class Square:
 
 
 class Rectangle:
-    def __init__(self, top_right_x, top_right_y, bottom_left_x, bottom_left_y):
+    def __init__(self, figure):
+        top_right_x = int(figure[2])
+        top_right_y = int(figure[3])
+        bottom_left_x = int(figure[-2])
+        bottom_left_y = int(figure[-1])
         self.top_right_x, self.top_right_y = top_right_x, top_right_y
         if bottom_left_x >= self.top_right_x or bottom_left_y >= self.top_right_y:
             raise ValueError("The coordinates of the bottomleft point cannot be to "
@@ -41,7 +48,10 @@ class Rectangle:
 
 
 class Circle:
-    def __init__(self, center_x, center_y, radius):
+    def __init__(self, figure):
+        center_x = int(figure[2])
+        center_y = int(figure[3])
+        radius = int(figure[-1])
         self.center_x, self.center_y = center_x, center_y
         if radius <= 0:
             raise ValueError('The radius of the circle must be a positive number!')
@@ -57,7 +67,13 @@ class Circle:
 
 
 class Triangle:
-    def __init__(self, point_1_x, point_1_y, point_2_x, point_2_y, point_3_x, point_3_y):
+    def __init__(self, figure):
+        point_1_x = int(figure[2])
+        point_1_y = int(figure[3])
+        point_2_x = int(figure[5])
+        point_2_y = int(figure[6])
+        point_3_x = int(figure[8])
+        point_3_y = int(figure[9])
         self.point_1_x = point_1_x
         self.point_1_y = point_1_y
         self.point_2_x = point_2_x
