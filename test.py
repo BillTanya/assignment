@@ -1,5 +1,6 @@
 import unittest
 from figures import Square, Rectangle, Circle, Triangle
+from assignment import handle_figure
 
 
 class SquareTest(unittest.TestCase):
@@ -106,4 +107,9 @@ class TriangleTest(unittest.TestCase):
                 t = Triangle(*data)
 
 
+class HandleFigureTest(unittest.TestCase):
+    def test_data(self):
+        figure = ["Square", "TopRight", "1", "1", "Side", "1"]
+        valid_data = 'Square Perimeter 4 Area 1'
+        self.assertEqual(handle_figure(figure), valid_data)
 
